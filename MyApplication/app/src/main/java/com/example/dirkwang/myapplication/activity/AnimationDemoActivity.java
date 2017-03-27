@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +18,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dirkwang.myapplication.R;
@@ -28,6 +30,7 @@ public class AnimationDemoActivity extends AppCompatActivity {
     private ImageView mStarIv;
     private ImageView mMvpIv;
     private View mGoalView;
+    private TextView mEntry;
 
 
     @Override
@@ -39,7 +42,15 @@ public class AnimationDemoActivity extends AppCompatActivity {
         mStarIv = (ImageView) findViewById(R.id.iv_star);
         mMvpIv = (ImageView) findViewById(R.id.iv_mvp);
         mGoalView = findViewById(R.id.v_goal);
+        mEntry = (TextView) findViewById(R.id.tv_entry);
 
+        mEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), OtherAnimationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 佛光旋转
         final Animation rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_light);
