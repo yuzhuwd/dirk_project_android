@@ -37,9 +37,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.OtherAnimationActivity"
+        <activity
+            android:name=".activity.OtherAnimationActivity"
             android:label="OtherAnimation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.SkinningActivity"
+            android:label="SkinningActivity"
             android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="SkinningActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
