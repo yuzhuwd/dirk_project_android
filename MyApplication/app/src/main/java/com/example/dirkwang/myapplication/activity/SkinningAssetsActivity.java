@@ -18,7 +18,7 @@ import com.example.dirkwang.myapplication.R;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SkinningActivity extends AppCompatActivity {
+public class SkinningAssetsActivity extends AppCompatActivity {
 
     TextView mChangeTv;
     TextView mGameNameTv;
@@ -75,6 +75,7 @@ public class SkinningActivity extends AppCompatActivity {
             String pic = "test.png";
             String path = mGameName + "/" + pic;
             inputStream = assetManager.open(path);
+
 
         } catch (IOException e) {
             Log.e("tag", e.getMessage());

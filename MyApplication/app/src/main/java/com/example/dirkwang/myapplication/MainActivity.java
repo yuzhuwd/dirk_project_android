@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
         mData.add(getData("LoadingBar", "PPActivity"));
         mData.add(getData("AnimationDemo", "AnimationDemoActivity"));
-        mData.add(getData("Skinning","SkinningActivity"));
+        mData.add(getData("SkinningAssets", "SkinningAssetsActivity"));
+        mData.add(getData("SkinningColorful", "SkinningColorfulActivity"));
     }
 
     private MainData getData(String title, String intent) {

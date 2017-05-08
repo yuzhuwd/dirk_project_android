@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.dirkwang.myapplication.activity.SkinningActivity">
+    tools:context="com.example.dirkwang.myapplication.activity.SkinningAssetsActivity">
 
     <TextView
         android:id="@+id/change_game"

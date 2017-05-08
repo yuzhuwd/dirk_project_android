@@ -40,16 +40,32 @@
         <activity
             android:name=".activity.OtherAnimationActivity"
             android:label="OtherAnimation"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SkinningActivity"
+            android:name=".activity.SkinningAssetsActivity"
             android:label="SkinningActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="SkinningActivity" />
+                <action android:name="SkinningAssetsActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SkinningColorfulActivity"
+            android:label="SkinningColorfulActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NightTheme">
+            <intent-filter>
+                <action android:name="SkinningColorfulActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.RecyclerActivity"
+            android:label="RecyclerActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
