@@ -53,19 +53,28 @@
         </activity>
         <activity
             android:name=".activity.SkinningColorfulActivity"
-            android:label="SkinningColorfulActivity"
+            android:label="SkinningColorful"
             android:screenOrientation="portrait"
             android:theme="@style/NightTheme">
             <intent-filter>
                 <action android:name="SkinningColorfulActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.RecyclerActivity"
-            android:label="RecyclerActivity"
-            android:screenOrientation="portrait"></activity>
+            android:label="Recycler"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SkinViewActivity"
+            android:label="SkinView"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="SkinViewActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

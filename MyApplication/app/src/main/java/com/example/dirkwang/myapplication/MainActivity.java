@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         mData.add(getData("AnimationDemo", "AnimationDemoActivity"));
         mData.add(getData("SkinningAssets", "SkinningAssetsActivity"));
         mData.add(getData("SkinningColorful", "SkinningColorfulActivity"));
+        mData.add(getData("SkinView", "SkinViewActivity"));
+
     }
 
     private MainData getData(String title, String intent) {

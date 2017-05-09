@@ -6,9 +6,13 @@
     </declare-styleable>-->
 
     <!-- 自定义属性 -->
-    <attr name="root_view_bg" format="reference|color" />
+    <attr name="root_view_bg_2" format="reference|color" />
     <attr name="btn_bg" format="reference|color" />
     <attr name="text_color" format="reference|color" />
 
+    <declare-styleable name="SkinImageView">
+        <attr name="skinBkg" format="reference" />
+        <attr name="root_view_bg" format="reference|color" />
+    </declare-styleable>
 
 </resources>
