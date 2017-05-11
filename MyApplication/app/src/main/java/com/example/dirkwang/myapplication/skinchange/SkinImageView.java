@@ -16,10 +16,11 @@ import java.lang.reflect.Field;
  * Created by dirkwang on 2017/5/9.
  */
 
-public class SkinImageView extends ImageView implements SkinInterface{
+public class SkinImageView extends ImageView implements SkinInterface {
 
     AttributeSet mAttrs;
     int offset;
+    int mIndex ;
 
     //TypedArray mTypedArray;
 
@@ -50,16 +51,50 @@ public class SkinImageView extends ImageView implements SkinInterface{
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.SkinView);
         int resId = a.getResourceId(R.styleable.SkinView_skin_background, 0);
+        String name = a.getNonResourceString(R.styleable.SkinView_skin_background);
 
-        Resources resources = a.getResources();
+        Log.w("dirk", "resId:" + resId);
+        //a.getIndex();
 
+/*        Resources resources = a.getResources();
+        String name = resources.getResourceName(resId);*/
+        //String name = resources.getResourceName(R.styleable.SkinView_skin_background);
         offset = getThemeId() - resId;
+
+        int count = attrs.getAttributeCount();
+        Log.w("dirk", "count:" + count);
+        for (int i = 0; i < count; ++i ) {
+            String attrName  = attrs.getAttributeName(i);
+            Log.w("dirk", "attrName:" + attrName);
+        }
+
+        for (int i = 0; i < count; ++i) {
+            String Value = attrs.getAttributeValue(i);
+            Log.w("dirk", "Value:" + Value);
+        }
+
+
+        String value = attrs.getAttributeValue(3);
+        int num = Integer.parseInt(value.substring(1));
+        for (int i = 0; i < R.styleable.Skin.length; ++i) {
+            if (num == R.styleable.Skin[i]){
+                mIndex = i;
+                break;
+            }
+        }
+
+        Log.w("dirk", "index:" + mIndex);
+
+
+
 
         //a.getResources();
         a.recycle();
-        Log.d("dirk-test", "SkinImageView:NightTheme:resId" + resId);
+
         setBackgroundResource(resId);
         ThemeSkinManager.getInstance().registeredSkinView(this);
+
+        //test(resId, getThemeId());
     }
 
     public void doSomething() {
@@ -74,7 +109,7 @@ public class SkinImageView extends ImageView implements SkinInterface{
         int resId = ta.getResourceId(R.styleable.SkinImageView_skin_background, 0);*/
 
         //mTypedArray.recycle();
- //       Log.d("dirk-test", "SkinImageView:DayTheme:resId" + resId);
+        //       Log.d("dirk-test", "SkinImageView:DayTheme:resId" + resId);
         //invalidate();
         //setBackgroundResource(resId);
 
@@ -104,7 +139,30 @@ public class SkinImageView extends ImageView implements SkinInterface{
 
     @Override
     public void changeSkin() {
-        int resId = getThemeId() - offset;
+
+        TypedArray ta = getContext().obtainStyledAttributes(R.styleable.Skin);
+        int resId = ta.getResourceId(mIndex, 0);
         setBackgroundResource(resId);
+
+/*        int resId = getThemeId() - offset;
+
+        String name = getContext().getResources().getResourceName(resId);
+        Log.d("dirk", "换肤后资源对应的名称：" + name);
+        String Themename = getContext().getResources().getResourceName(getThemeId());
+        Log.d("dirk", "换肤前资源对应的主题名称：" + Themename);
+        setBackgroundResource(resId);*/
+        //test(resId, getThemeId());
+    }
+
+    private void test(int resId, int themeId) {
+        Log.e("dirk", "资源ID：【" + resId + "】主题ID：【" + themeId+"】");
+        for (int i = resId; i <= themeId; i++) {
+            try {
+                String name = getContext().getResources().getResourceName(i);
+                Log.e("dirk", "换肤后资源对应的Id：【" + i + "】换肤后资源对应的名称：【" + name + "】");
+            } catch (Exception e) {
+                //Log.e("dirk", "无法读取的ID：" + i);
+            }
+        }
     }
 }

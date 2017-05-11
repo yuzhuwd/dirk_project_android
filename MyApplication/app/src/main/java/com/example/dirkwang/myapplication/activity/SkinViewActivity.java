@@ -54,6 +54,8 @@ public class SkinViewActivity extends AppCompatActivity {
 
                 TypedArray ta = obtainStyledAttributes(R.styleable.Skin);
                 int resId = ta.getResourceId(R.styleable.Skin_root_view_bg, 0);
+                String attrName = "root_view_bg";
+
                 //int resId = ta.getResourceId(R.styleable.SkinImageView_skin_background, 0);
                 Log.d("dirk-test", "DayTheme:resId" + resId);
                 ta.recycle();

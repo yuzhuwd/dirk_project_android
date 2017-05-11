@@ -14,6 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+
+
     <View
         android:id="@+id/testView"
         android:gravity="center"
@@ -27,13 +29,13 @@
         android:textColor="#ff00ff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
     <com.example.dirkwang.myapplication.skinchange.SkinImageView
         android:id="@+id/skinIv"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:skin_background="?attr/root_view_bg"
         />
+
 
     <TextView
         android:text="SkinTextView通过主题切换"
@@ -50,6 +52,8 @@
         android:gravity="center"
         android:layout_height="100dp"
         app:skin_background="?attr/btn_bg"
+        android:textColor="@color/black_btn_color"
+        android:background="@drawable/animation_demo_bkg"
         app:skin_textcolor="?attr/text_color"/>
 
     <TextView
