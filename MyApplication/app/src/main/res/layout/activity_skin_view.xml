@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.dirkwang.myapplication.activity.SkinViewActivity">
+
+    <TextView
+        android:text="通过资源名称切换"
+        android:textSize="20dp"
+        android:textColor="#ff00ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <View
         android:id="@+id/testView"
@@ -13,12 +22,44 @@
         android:background="?attr/root_view_bg"/>
 
     <TextView
-        android:id="@+id/tv_change"
-        android:layout_below="@+id/testView"
+        android:text="SkinImageView通过主题切换"
         android:textSize="20dp"
+        android:textColor="#ff00ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.dirkwang.myapplication.skinchange.SkinImageView
+        android:id="@+id/skinIv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:skin_background="?attr/root_view_bg"
+        />
+
+    <TextView
+        android:text="SkinTextView通过主题切换"
+        android:textSize="20dp"
+        android:textColor="#ff00ff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.dirkwang.myapplication.skinchange.SkinTextView
+        android:id="@+id/skin_tv"
+        android:layout_width="match_parent"
+        android:text = "告诉我，可以嘛？"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:layout_height="100dp"
+        app:skin_background="?attr/btn_bg"
+        app:skin_textcolor="?attr/text_color"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_change"
+        android:textSize="40dp"
         android:text="切换"
         android:gravity="center"
         android:textColor="#00ff00"
+        android:background="#000fff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+        android:layout_height="50dp" />
+</LinearLayout>
