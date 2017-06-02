@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>    <!-- 日间主题 -->
+    <style name="DayTheme" parent="AppTheme">
+        <item name="root_view_bg">@drawable/bg_day</item>
+        <item name="btn_bg">@color/white_btn_color</item>
+        <item name="text_color">@color/black_tx_color</item>
+        <item name="draw_left">@drawable/l2</item>
+        <item name="text_content">日间主题</item>
+
+    </style>
+
+    <!-- 夜间主题 -->
+    <style name="NightTheme" parent="AppTheme">
+        <item name="root_view_bg">@drawable/bg_night</item>
+        <item name="btn_bg">@color/black_btn_color</item>
+        <item name="text_color">@color/white_tx_color</item>
+        <item name="draw_left">@drawable/skinning_test2</item>
+        <item name="text_content">夜间主题</item>
+    </style>
+</resources>

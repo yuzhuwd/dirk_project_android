@@ -1,69 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.dirkwang.myapplication.activity.SkinViewActivity">
 
     <TextView
-        android:text="通过资源名称切换"
-        android:textSize="20dp"
-        android:textColor="#ff00ff"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:text="通过资源名称切换"
+        android:textColor="#ff00ff"
+        android:textSize="20dp" />
 
 
     <View
         android:id="@+id/testView"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="?attr/root_view_bg"/>
+        android:background="?attr/root_view_bg"
+        android:gravity="center" />
 
     <TextView
-        android:text="SkinImageView通过主题切换"
-        android:textSize="20dp"
-        android:textColor="#ff00ff"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="SkinImageView通过主题切换"
+        android:textColor="#ff00ff"
+        android:textSize="20dp" />
+
     <com.example.dirkwang.myapplication.skinchange.SkinImageView
         android:id="@+id/skinIv"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        app:skin_background="?attr/root_view_bg"
-        />
+        android:src="?attr/root_view_bg" />
 
 
     <TextView
-        android:text="SkinTextView通过主题切换"
-        android:textSize="20dp"
-        android:textColor="#ff00ff"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="SkinTextView通过主题切换"
+        android:textColor="#ff00ff"
+        android:textSize="20dp" />
 
     <com.example.dirkwang.myapplication.skinchange.SkinTextView
         android:id="@+id/skin_tv"
+        app:skin_support="activity"
         android:layout_width="match_parent"
-        android:text = "告诉我，可以嘛？"
-        android:textSize="30dp"
-        android:gravity="center"
         android:layout_height="100dp"
-        app:skin_background="?attr/btn_bg"
-        android:textColor="@color/black_btn_color"
-        android:background="@drawable/animation_demo_bkg"
-        app:skin_textcolor="?attr/text_color"/>
+        android:background="?attr/btn_bg"
+        android:drawableLeft="?attr/draw_left"
+        android:gravity="center"
+        android:text="?attr/text_content"
+        android:textColor="?attr/text_color"
+        android:textSize="30dp" />
 
     <TextView
-        android:layout_marginTop="10dp"
         android:id="@+id/tv_change"
-        android:textSize="40dp"
-        android:text="切换"
-        android:gravity="center"
-        android:textColor="#00ff00"
-        android:background="#000fff"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="#000fff"
+        android:gravity="center"
+        android:text="切换"
+        android:textColor="#00ff00"
+        android:textSize="40dp" />
 </LinearLayout>

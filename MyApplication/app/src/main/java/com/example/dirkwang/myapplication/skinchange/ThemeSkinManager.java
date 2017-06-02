@@ -36,14 +36,18 @@ public class ThemeSkinManager {
     }
 
     public <T extends View & SkinInterface> void registeredSkinView(T view) {
+        if (view == null) return;
+
         WeakReference<View> skinView = new WeakReference<View>(view);
         mSkinList.add(skinView);
         Log.d("ThemeSkinManager", "注册换肤view：" + view.getId());
+        Log.d("dirk|ThemeSkinManager", "ThemeSkinManager_context:" + view.getContext());
     }
 
     public void noticeChangeTheme(Context context, int themeId) {
         Log.d("ThemeSkinManager", "修改主题：" + themeId);
         mCurcentTheme = themeId;
+        context.getApplicationContext().setTheme(mCurcentTheme);
         context.setTheme(mCurcentTheme);
         handleSkinView();
     }
