@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Path;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 
 import com.example.dirkwang.myapplication.R;
 
-public class AnimationDemoActivity extends AppCompatActivity {
+public class AnimationDemoActivity extends Activity {
 
     private ViewGroup mViewGroup;
     private ImageView mLightIv;

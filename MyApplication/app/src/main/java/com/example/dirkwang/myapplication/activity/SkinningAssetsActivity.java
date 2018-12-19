@@ -1,12 +1,12 @@
 package com.example.dirkwang.myapplication.activity;
 
+import android.app.Activity;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -18,7 +18,7 @@ import com.example.dirkwang.myapplication.R;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class SkinningAssetsActivity extends AppCompatActivity {
+public class SkinningAssetsActivity extends Activity {
 
     TextView mChangeTv;
     TextView mGameNameTv;
@@ -54,7 +54,7 @@ public class SkinningAssetsActivity extends AppCompatActivity {
     private void changeShowEx() {
         AssetManager assetManager = getAssets();
 
-        String[] files = null ;
+        String[] files = null;
 
         try {
 
@@ -62,10 +62,10 @@ public class SkinningAssetsActivity extends AppCompatActivity {
 
         } catch (IOException e) {
 
-            Log.e ("tag", e.getMessage());
+            Log.e("tag", e.getMessage());
 
         }
-        Log.d("dirk", "files:"+files[0].toString());
+        Log.d("dirk", "files:" + files[0].toString());
 
         mGameNameTv.setText(mGameName);
 
@@ -83,7 +83,7 @@ public class SkinningAssetsActivity extends AppCompatActivity {
 
         Log.d("dirk", "inputStream:" + inputStream.toString());
 
-        Bitmap bpause =BitmapFactory.decodeStream(inputStream);
+        Bitmap bpause = BitmapFactory.decodeStream(inputStream);
         //mTestView.setImageBitmap(bpause);
         Drawable drawable = new BitmapDrawable(bpause);
         mTestView.setImageDrawable(drawable);

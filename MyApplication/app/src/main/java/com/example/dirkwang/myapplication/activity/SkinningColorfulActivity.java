@@ -1,5 +1,6 @@
 package com.example.dirkwang.myapplication.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,7 @@ import com.example.dirkwang.myapplication.colorful.ViewGroupSetter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkinningColorfulActivity extends AppCompatActivity {
+public class SkinningColorfulActivity extends Activity {
 
     ListView mNewsListView;
     List<String> mNewsList = new ArrayList<String>();

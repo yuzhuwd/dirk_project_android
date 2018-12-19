@@ -1,5 +1,6 @@
 package com.example.dirkwang.myapplication.activity;
 
+import android.app.Activity;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ import com.example.dirkwang.myapplication.skinchange.ThemeSkinManager;
 import static com.example.dirkwang.myapplication.R.style.DayTheme;
 import static com.example.dirkwang.myapplication.R.style.NightTheme;
 
-public class SkinViewActivity extends AppCompatActivity {
+public class SkinViewActivity extends Activity {
 
     TextView mChange;
     SkinImageView mSkinImageView;

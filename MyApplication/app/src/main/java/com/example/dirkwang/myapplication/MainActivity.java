@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(getData("SkinningAssets", "SkinningAssetsActivity"));
         mData.add(getData("SkinningColorful", "SkinningColorfulActivity"));
         mData.add(getData("SkinView", "SkinViewActivity"));
+        mData.add(getData("AndroidUtilTest", "UtilTestActivity"));
 
     }
 

@@ -72,6 +72,16 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="SkinViewActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.UtilTestActivity"
+            android:label="AndroidUtilTest"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="UtilTestActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
