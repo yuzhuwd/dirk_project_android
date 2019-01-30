@@ -21,7 +21,7 @@ import com.example.dirkwang.myapplication.colorful.ViewGroupSetter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SkinningColorfulActivity extends Activity {
+public class SkinningColorfulActivity extends AppCompatActivity {
 
     ListView mNewsListView;
     List<String> mNewsList = new ArrayList<String>();

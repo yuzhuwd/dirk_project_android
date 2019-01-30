@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.example.dirkwang.myapplication.R;
 
-public class AnimationDemoActivity extends Activity {
+public class AnimationDemoActivity extends AppCompatActivity {
 
     private ViewGroup mViewGroup;
     private ImageView mLightIv;

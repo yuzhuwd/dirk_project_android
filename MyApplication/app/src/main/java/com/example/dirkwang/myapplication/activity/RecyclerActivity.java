@@ -1,10 +1,7 @@
 package com.example.dirkwang.myapplication.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
@@ -19,118 +16,119 @@ import com.example.dirkwang.myapplication.R;
 import com.example.dirkwang.myapplication.colorful.Colorful;
 import com.example.dirkwang.myapplication.colorful.ViewGroupSetter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * 演示RecyclerView的换肤效果
- * @author mrsimple
  *
+ * @author mrsimple
  */
-public class RecyclerActivity extends Activity {
+public class RecyclerActivity extends AppCompatActivity {
 
-	RecyclerView mRecyclerView;
-	List<String> mNewsList = new ArrayList<String>();
-	Colorful mColorful;
-	boolean isNight = false;
+    RecyclerView mRecyclerView;
+    List<String> mNewsList = new ArrayList<String>();
+    Colorful mColorful;
+    boolean isNight = false;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		//setTheme(R.style.NightTheme);
+        //setTheme(R.style.NightTheme);
 
-		setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.activity_recycler);
 
-		findViewById(R.id.change_btn).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.change_btn).setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View v) {
-				changeThemeWithColorful();
-			}
-		});
+            @Override
+            public void onClick(View v) {
+                changeThemeWithColorful();
+            }
+        });
 
-		mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-		mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-		mRecyclerView.setItemViewCacheSize(0);
-		// 模拟数据
-		mockNews();
-		mRecyclerView.setAdapter(new NewsAdapter());
-		
-		// 初始化Colorful
-		setupColorful();
-	}
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setItemViewCacheSize(0);
+        // 模拟数据
+        mockNews();
+        mRecyclerView.setAdapter(new NewsAdapter());
 
-	/**
-	 * 设置各个视图与颜色属性的关联
-	 */
-	private void setupColorful() {
-		ViewGroupSetter recyclerViewSetter = new ViewGroupSetter(mRecyclerView,
-				0);
-		recyclerViewSetter.childViewTextColor(R.id.news_title,
-				R.attr.text_color);
+        // 初始化Colorful
+        setupColorful();
+    }
 
-		mColorful = new Colorful.Builder(this)
-				.backgroundColor(R.id.change_btn, R.attr.btn_bg) // 设置背景色
-				.setter(recyclerViewSetter) // 手动设置setter
-				.create(); // 设置文本颜色
-	}
+    /**
+     * 设置各个视图与颜色属性的关联
+     */
+    private void setupColorful() {
+        ViewGroupSetter recyclerViewSetter = new ViewGroupSetter(mRecyclerView,
+                0);
+        recyclerViewSetter.childViewTextColor(R.id.news_title,
+                R.attr.text_color);
 
-	private void changeThemeWithColorful() {
-		if (!isNight) {
-			mColorful.setTheme(R.style.DayTheme);
-		} else {
-			mColorful.setTheme(R.style.NightTheme);
-		}
-		isNight = !isNight;
-	}
+        mColorful = new Colorful.Builder(this)
+                .backgroundColor(R.id.change_btn, R.attr.btn_bg) // 设置背景色
+                .setter(recyclerViewSetter) // 手动设置setter
+                .create(); // 设置文本颜色
+    }
 
-	private void mockNews() {
-		for (int i = 0; i < 20; i++) {
-			mNewsList.add("News Title - " + i);
-		}
-	}
+    private void changeThemeWithColorful() {
+        if (!isNight) {
+            mColorful.setTheme(R.style.DayTheme);
+        } else {
+            mColorful.setTheme(R.style.NightTheme);
+        }
+        isNight = !isNight;
+    }
 
-	/**
-	 * 
-	 * @author mrsimple
-	 * 
-	 */
-	class NewsAdapter extends Adapter<NewsViewHolder> {
+    private void mockNews() {
+        for (int i = 0; i < 20; i++) {
+            mNewsList.add("News Title - " + i);
+        }
+    }
 
-		@Override
-		public int getItemCount() {
-			return mNewsList.size();
-		}
+    /**
+     * @author mrsimple
+     */
+    class NewsAdapter extends Adapter<NewsViewHolder> {
 
-		public String getItem(int position) {
-			return mNewsList.get(position);
-		}
+        @Override
+        public int getItemCount() {
+            return mNewsList.size();
+        }
 
-		@Override
-		public long getItemId(int position) {
-			return position;
-		}
+        public String getItem(int position) {
+            return mNewsList.get(position);
+        }
 
-		@Override
-		public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-			View itemView = LayoutInflater.from(RecyclerActivity.this).inflate(
-					R.layout.news_lv_item, parent, false);
-			return new NewsViewHolder(itemView);
-		}
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
 
-		@Override
-		public void onBindViewHolder(NewsViewHolder viewHolder, int position) {
-			viewHolder.newsTitleView.setText(getItem(position));
-		}
-	}
+        @Override
+        public NewsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(RecyclerActivity.this).inflate(
+                    R.layout.news_lv_item, parent, false);
+            return new NewsViewHolder(itemView);
+        }
 
-	public static class NewsViewHolder extends ViewHolder {
+        @Override
+        public void onBindViewHolder(NewsViewHolder viewHolder, int position) {
+            viewHolder.newsTitleView.setText(getItem(position));
+        }
+    }
 
-		public TextView newsTitleView;
+    public static class NewsViewHolder extends ViewHolder {
 
-		public NewsViewHolder(View itemView) {
-			super(itemView);
+        public TextView newsTitleView;
 
-			newsTitleView = (TextView) itemView.findViewById(R.id.news_title);
-		}
-	}
+        public NewsViewHolder(View itemView) {
+            super(itemView);
+
+            newsTitleView = (TextView) itemView.findViewById(R.id.news_title);
+        }
+    }
 }

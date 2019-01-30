@@ -16,7 +16,8 @@ buildscript {
     }
     dependencies {
 
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:3.3.0'
+        //compile 'com.github.yhaolpz:FloatWindow:1.0.9'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -35,6 +36,8 @@ allprojects {
             url project.MAVEN_URL_RELEASE
         }
         //jcenter()
+
+        //maven { url 'https://jitpack.io' }
     }
 }
 

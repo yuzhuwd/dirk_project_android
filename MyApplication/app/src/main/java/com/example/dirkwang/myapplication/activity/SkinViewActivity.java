@@ -16,7 +16,7 @@ import com.example.dirkwang.myapplication.skinchange.ThemeSkinManager;
 import static com.example.dirkwang.myapplication.R.style.DayTheme;
 import static com.example.dirkwang.myapplication.R.style.NightTheme;
 
-public class SkinViewActivity extends Activity {
+public class SkinViewActivity extends AppCompatActivity {
 
     TextView mChange;
     SkinImageView mSkinImageView;

@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.dirkwang.myapplication.R;
 
-public class OtherAnimationActivity extends Activity {
+public class OtherAnimationActivity extends AppCompatActivity {
 
     private TextView mFlashEntry;
     private ImageView mFlashView;
