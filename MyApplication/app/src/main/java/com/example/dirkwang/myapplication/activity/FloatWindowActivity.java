@@ -1,6 +1,6 @@
 package com.example.dirkwang.myapplication.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,8 +16,6 @@ import com.yhao.floatwindow.MoveType;
 import com.yhao.floatwindow.PermissionListener;
 import com.yhao.floatwindow.Screen;
 import com.yhao.floatwindow.ViewStateListener;
-
-import java.util.zip.Inflater;
 
 public class FloatWindowActivity extends AppCompatActivity {
 

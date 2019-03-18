@@ -1,8 +1,7 @@
 package com.example.dirkwang.myapplication.activity;
 
-import android.app.Activity;
 import android.content.res.TypedArray;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

@@ -35,6 +35,7 @@ allprojects {
         maven {
             url project.MAVEN_URL_RELEASE
         }
+        google()
         //jcenter()
 
         //maven { url 'https://jitpack.io' }
