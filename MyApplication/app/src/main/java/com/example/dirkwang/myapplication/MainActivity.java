@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(getData("SkinView", "SkinViewActivity"));
         mData.add(getData("AndroidUtilTest", "UtilTestActivity"));
         mData.add(getData("FloatWindow","FloatWindowActivity"));
+        mData.add(getData("ImageTest","ImageTestActivity"));
 
     }
 

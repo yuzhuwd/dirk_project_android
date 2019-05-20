@@ -14,7 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.ImageTestActivity"
+            android:label="ImageTest"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="ImageTestActivity" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -93,15 +101,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.FloatWindowActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="FloatWindowActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
     </application>
 
