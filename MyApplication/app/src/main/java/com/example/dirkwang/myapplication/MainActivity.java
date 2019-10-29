@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(getData("AndroidUtilTest", "UtilTestActivity"));
         mData.add(getData("FloatWindow","FloatWindowActivity"));
         mData.add(getData("ImageTest","ImageTestActivity"));
+        mData.add(getData("AIDLTest","AIDLTestActivity"));
 
     }
 
